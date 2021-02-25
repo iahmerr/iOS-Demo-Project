@@ -7,9 +7,12 @@
 //
 
 import XCTest
+@testable import iOS_Demo_Project
 
 class iOS_Demo_ProjectUITests: XCTestCase {
-
+    
+   
+    let fetchData = FetchData()
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -30,6 +33,25 @@ class iOS_Demo_ProjectUITests: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func test_TableViewHomeController() {
+        
+        let app = XCUIApplication()
+        app.launch()
+         let checkExpectation = self.expectation(description: "Testing after API Call")
+        self.fetchData.getHomeProducts(resultType: ProductsResponse.self) { (result) in
+            
+            XCTAssertEqual(app.tables.cells.count, 10)
+                   app.tables.staticTexts["table lamp"].swipeUp()
+                   XCTAssertEqual(app.buttons.count, 0)
+            
+        }
+       
+       
+        
+        checkExpectation.fulfill()
+        waitForExpectations(timeout: 15, handler: nil)
     }
 
     func testLaunchPerformance() throws {
