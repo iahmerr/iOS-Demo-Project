@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-iOS Demo Project-iOS Demo ProjectUITests/Pods-iOS Demo Project-iOS Demo ProjectUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/CLabsImageSlider/CLabsImageSlider.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework
